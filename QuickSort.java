@@ -29,13 +29,17 @@ public class QuickSort{
      if(j<=a[s]){
        for(int i=0;i<s;i++)
           {a[i]=a[i+1];}
-       a[start]=j;
+       a[s]=j;
        }
      else if(j>=a[e]){
-       for(int g=a.length-a-1;g<a.length;g++)
+       for(int g=a.length-e-1;g<a.length;g++)
           {a[g]=a[g+1];}
-       a[a.length]=j;
+       a[a.length-e-1]=j;
        }
+       else {
+         for(int k=0;k<s+1;k++){
+	    a[k]=a[k+1];}
+          a[s]=j;}
      
     quickSort(a,start,key-1);
     quickSort(a,key + 1,end);
